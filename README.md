@@ -1,2 +1,3 @@
-# flask-blog-template
-Studiano flask voglio creare pian piano un mio micro blog template.
+# Flask Blog Template
+In cosa consiste questo progetto?
+In un semplice template creato in flask.
