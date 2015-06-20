@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	{% if tile %}
-	<title>{{ title }}</title>
-	{% else %}
-	<title>HomePage index</title>
-	{% endif %}
-</head>
-<body>
-	<p>This is my first Page</p>
-</body>
-</html>
+{% extends "template.html" %}
+{% block body %}
+<h1>{{ block_title }}</h1>
+{% for post in posts %}
+
+<div><h2>Titolo: {{ post.title }}</h2>
+<h3>Autore: {{ post.autore }}</h3>
+<p>{{ post.body }}</p></div>
+
+{% endfor %}
+{% endblock%}
