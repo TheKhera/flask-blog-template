@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	{% if tile %}
-	<title>{{ title }}</title>
-	{% else %}
-	<title>My Template Blog</title>
-	{% endif %}
-</head>
-<body>
-	<a href="/index">HomePage</a>
-	<a href="/About">About</a>
-	<br>
-	<hr>
-	{% block body %}
-	{% endblock %}
-</body>
-</html>
+<!doctype html>
+<title>jQuery Example</title>
+<script type="text/javascript"
+  src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript">
+  var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+{% block body %}{% endblock %}

@@ -1,11 +1,36 @@
 {% extends "template.html" %}
 {% block body %}
-<h1>{{ block_title }}</h1>
-{% for post in posts %}
-
-<div><h2>Titolo: {{ post.title }}</h2>
-<h3>Autore: {{ post.autore }}</h3>
-<p>{{ post.body }}</p></div>
-
-{% endfor %}
-{% endblock%}
+<script type="text/javascript">
+  $(function() {
+    var submit_form = function(e) {
+      $.getJSON($SCRIPT_ROOT + '/_test_save', {
+        autore: $('input[name="autore"]').val(),
+        data: $('input[name="data"]').val(),
+        corpo: $('textarea[name="textArea"]').val()
+      }, function(data) {
+        $('#result').text(data.result);
+        $('input[name=autore]').focus().select();
+      });
+      return false;
+    };
+    $('a#calculate').bind('click', submit_form);
+    $('input[type=text]').bind('keydown', function(e) {
+      if (e.keyCode == 13) {
+        submit_form(e);
+      }
+    });
+    $('input[name=a]').focus();
+  });
+</script>
+<h1>Flask-Blog-Template | Post Editor</h1>
+<hr>
+<p>
+  Autore: 
+  <input type="text" size="30" name="autore">
+  Data:
+  <input type="date" name="data">
+  <p>Corpo del post:</p>
+  <textarea rows="10" cols="50" name="textArea"></textarea>
+  <span id="result">?</span>
+<p><a href=# id="calculate">Pubblica! Server side!</a>
+{% endblock %}

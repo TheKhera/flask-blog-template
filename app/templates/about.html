@@ -1,5 +1,8 @@
 {% extends "template.html" %}
 {% block body %}
+<script type=text/javascript>
+	$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
 <h3>My Template Blog</h3>
 <h4>Creato da: TheKhera</h4>
 <h4>Link codice sorgente: <a href="https://github.com/TheKhera/flask-blog-template">GitHub: Flask-Blog-Template</a></h4>
