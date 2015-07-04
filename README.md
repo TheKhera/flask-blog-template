@@ -2,6 +2,9 @@
 ## In cosa consiste questo progetto?
 Nel tempo libero sto studiano il microframework Flask ed con calma voglio creare un mio microblog template per usarlo in progetti futuri.
 
+## Prima versione? Sta arrivando.
+Nella prossima settimana verrà pubblicata la prima versione, con un abbozzo di grafica.
+
 ## Prissimi obbietivi
 
 #### Grafica:
