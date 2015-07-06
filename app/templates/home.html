@@ -1,0 +1,10 @@
+{% extends "templates.html" %}
+{% block content %}
+<h1>Flask-Blog-Template Login</h1>
+<hr>
+{% for post in posts %}
+	<h2>{{ post.titolo }}</h2>
+	<h3>Autore: {{ post.autore }}</h3>
+	<p>{{ post.corpo }}</p>
+{% endfor %}
+{% endblock %}
