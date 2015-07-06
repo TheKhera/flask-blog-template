@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% if title %}
+			<title>{{ title }} - Flask-Blog-Template</title>
+		{% else %}
+			<title>Flask-Blog-Template</title>
+		{% endif %}
+		<style type="text/css">
+			.centra{
+				margin: auto;
+				width: 900px;
+				border: 3px solid #8AC007;
+				padding: 10px;
+				font-family: Verdana, Geneva, sans-serif;
+			}
+
+			.menu{
+				text-align: center;
+				font-size: 20px;
+			}
+
+		</style>
+		{% block script %}
+		{% endblock %}
+	</head>
+	<body>
+		<div class="centra">
+			<div class="menu">
+				<h1>Flask-Blog-Template</h1>
+				<a href="/home">Home</a> | <a href="/login">Accedi </a>
+				{% if 'logged_in' in session %}
+					| <a href="/admin_manage"> Admin Manage Page</a>
+					| <a href="/logout">Esci</a>
+					| Benvenuto, {{ session['username'] }}.
+				{% endif %}
+			</div>
+			<hr>
+			<div class="container">
+				{% block content %}
+				{% endblock %}
+			</div>
+		</div>
+	</body>
+</html>
